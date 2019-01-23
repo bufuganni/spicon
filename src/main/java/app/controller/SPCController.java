@@ -145,11 +145,11 @@ public class SPCController {
      *查询pelicano的16个通道里面分别是哪个国家的什么面额的币种，并将返回的数据存在内存中，在【收币轮训指令】解析时使用
      * @return
      */
-    @ApiOperation(value = "查询pelicano的16个通道里面分别是哪个国家的什么面额的币种")
+    @ApiOperation(value = "查询pelicano的16个通道里面分别是哪个国家的的币种")
     @PostMapping("requestCoinId")
     public String requestCoinId() {
         if (serialPort == null) {
-            return "端口未启动，请启动。。。";
+            return "端口未启动，请启动。。。";  
         }
         try {
             SerialPortUtils.sendToPort(serialPort, HexUtils.hexStringToBytes(SerialConf.REQUEST_COIN_ID));
